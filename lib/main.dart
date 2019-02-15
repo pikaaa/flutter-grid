@@ -77,10 +77,20 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: new CupertinoAlertDialog(
                           title: new Column(
                             children: <Widget>[
-                              new Text("You're seeing an alert")
+                              new Text("You're seeing item $index with following color")
                             ],
                           ),
-                          content: new Text("content"),
+                          content: new Container(
+                            decoration: new BoxDecoration(
+                              color: _color,
+                            ),
+                            constraints: new BoxConstraints.expand(
+                              width: 250.0, height: 250,
+                            ),
+                            child: Text(
+                              'Item $index',
+                            ),
+                          ),
                           actions: <Widget>[
                             new FlatButton(
                               onPressed: () {
