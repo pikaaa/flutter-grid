@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                       print("tapped on container");
                       showDialog(
-                        barrierDismissible: false,
+                        barrierDismissible: true,
                         context: context,
                         child: new CupertinoAlertDialog(
                           title: new Column(
