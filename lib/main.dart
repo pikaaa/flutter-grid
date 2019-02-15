@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:random_color/random_color.dart';
 
 void main() {
@@ -69,6 +71,27 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               onTap: () {
                       print("tapped on container");
+                      showDialog(
+                        barrierDismissible: false,
+                        context: context,
+                        child: new CupertinoAlertDialog(
+                          title: new Column(
+                            children: <Widget>[
+                              new Text("You're seeing an alert")
+                            ],
+                          ),
+                          content: new Text("content"),
+                          actions: <Widget>[
+                            new FlatButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: new Text("OK")
+                            )
+                          ],
+                        )
+                      );
+
                       },
             );
           }),
